@@ -13,12 +13,12 @@ commitor=`git config --list |grep "user.name"|sed 's/.*=//g'`
 
 if [[ -z $result ]]; then
 	echo "Your repository is clearly!"
-	git pull origin master
+	git pull origin main
 else
 	##stash current repository
 	git stash
 	## update git repository to newly
-	git pull origin master
+	git pull origin main
 	## reset stash
 	git stash pop stash@{0}
 	
@@ -58,7 +58,7 @@ else
 			fi
 		done
 		
-	git add -A && git commit -m "upload" && git push origin master
+	git add -A && git commit -m "upload" && git push origin main
 fi
 
 echo ""
